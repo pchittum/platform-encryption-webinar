@@ -1,0 +1,12 @@
+{ "batchRequests": [
+        {
+            "method": "POST",
+            "url": "v34.0/sobjects/TenantSecret",
+            "richInput": { "Description": "New Secret from API" }
+        },
+        {
+            "method": "GET",
+            "url": "v34.0/query?q=SELECT+Id,Description,Status,Version,SecretValue,CreatedDate+FROM+TenantSecret+ORDER+BY+Version+DESC+LIMIT+5"
+        }
+    ]
+}
