@@ -1,0 +1,49 @@
+<apex:page controller="SOSLController">
+  <apex:form >
+  <apex:inputText value="{!searchStr}"/>
+    <apex:commandButton value="Search in Account, Contact, Opportunity" action="{!soslDemo_method}"                reRender="acct,error,oppt,cont" status="actStatusId"/>
+    <apex:actionStatus id="actStatusId">
+                <apex:facet name="start" >
+                    <img src="/img/loading.gif"/>                    
+                </apex:facet>
+    </apex:actionStatus>
+  </apex:form>
+ 
+    <apex:outputPanel title="" id="error">
+     <apex:pageMessages ></apex:pageMessages>
+     </apex:outputPanel>
+ 
+    <apex:pageBlock rendered="{!HasAccounts}" title="Accounts" id="acct">
+    <apex:pageblockTable value="{!accList }" var="acc">
+        <apex:column ><apex:outputLink value="{!URLFOR($Action.Account.View, acc.id)}">{!acc.name}</apex:outputLink> </apex:column>
+          <apex:column value="{!acc.Type}"/>
+          <apex:column value="{!acc.TAX_ID__c}"/>
+       </apex:pageblockTable>
+    </apex:pageBlock>
+ 
+ <apex:pageBlock rendered="{!HasContacts}" title="Contacts" id="cont">
+    <apex:pageblockTable value="{!conList}" var="con">
+      <apex:column ><apex:outputLink value="{!URLFOR($Action.Contact.View, con.id)}">{!con.name}</apex:outputLink> </apex:column>
+      <apex:column value="{!con.email}"/>
+      <apex:column value="{!con.DLN__c}"/>
+      <apex:column value="{!con.SSN__c}"/>
+ </apex:pageblockTable>
+ </apex:pageBlock>
+  
+ <apex:pageBlock rendered="{!HasOpportunities}" title="Opportunities" id="oppt">
+    <apex:pageblockTable value="{!optyList}" var="opty">
+      <apex:column value="{!opty.name}"/>
+     <apex:column value="{!opty.StageName}"/>
+ </apex:pageblockTable>
+ </apex:pageBlock>
+
+ <apex:pageBlock rendered="{!HasChildren}" title="Children" id="children">
+    <apex:pageblockTable value="{!childList}" var="child">
+      <apex:column value="{!child.name}"/>
+     <apex:column value="{!child.First_Name__c}"/>
+     <apex:column value="{!child.Family_Name__c}"/>
+ </apex:pageblockTable>
+ </apex:pageBlock>
+
+   
+</apex:page>
