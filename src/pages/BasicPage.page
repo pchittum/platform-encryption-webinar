@@ -1,0 +1,16 @@
+<apex:page controller="BasicController" showHeader="true" sidebar="true">
+	<apex:sectionHeader title="Test Encryption Access" subtitle="Testing with Apex Controller" />
+	<apex:pageBlock title="Contacts">
+		<apex:pageBlockButtons location="top">
+			
+		</apex:pageBlockButtons>
+		<apex:pageBlockTable value="{!contacts}" var="contact" title="Contacts Table">
+			<apex:column value="{!contact.FirstName}"/>
+			<apex:column value="{!contact.LastName}"/>
+			<apex:column value="{!contact.Email}"/>
+			<apex:column value="{!contact.PHone}"/>
+			<apex:column value="{!contact.DLN__c}"/>
+			<apex:column value="{!contact.SSN__c}"/>
+		</apex:pageBlockTable>
+	</apex:pageBlock>
+</apex:page>

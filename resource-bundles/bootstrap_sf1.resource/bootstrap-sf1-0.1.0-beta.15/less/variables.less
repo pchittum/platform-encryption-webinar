@@ -1,0 +1,225 @@
+@import "../bower_components/bootstrap/less/variables.less";
+@import "generated/s1base.less";
+
+
+//== Colors
+//
+@gray-dark:                 #3c3d3e;
+@gray:                      #cfd0d2;
+@gray-light:                #E8E9EC;
+@gray-lighter:              #F5F6F7;
+@brand-primary:             @color-background-button-brand;
+@brand-success:             #4AB471;
+@brand-info:                #4EB1CB;
+@brand-warning:             #F3AE4E;
+@brand-danger:              #CF5C60;
+@brand-anchor:              @color-background-anchor;
+@jumbotron-inverse-bg:      @brand-anchor;
+@jumbotron-inverse-color:   #fff;
+
+
+//== Scaffolding
+//
+@body-bg:               @color-background;
+@text-color:            @color-text-default;
+@anchor-text-color:     @color-text-inverse;
+@text-color-4:          #5c7995;
+
+
+//== Typography
+//
+@font-path:               "../fonts/";
+@font-file-regular:       "ProximaNovaSoft-Regular";
+@font-file-medium:        "ProximaNovaSoft-Semibold";
+@font-family-sans-serif:  "ProximaNovaSoft-Regular", Calibri, "Gill Sans", "Gill Sans MT", Candara, Segoe, "Segoe UI", Arial, sans-serif;
+@headings-color:          #2e4153;
+
+@font-size-base:          14px;
+@font-size-large:         16px; 
+@font-size-small:         @font-size-x-small;
+
+@font-size-h1:            @font-size-xx-large; // 22px
+@font-size-h2:            @font-size-xl-large; // 19px
+@font-size-h3:            @font-size-x-large; // 18px
+@font-size-h4:            @font-size-large; // 16px
+@font-size-h5:            @font-size-base; // 14px
+@font-size-h6:            @font-size-x-small; // 13px
+
+
+//== Components
+//
+@padding-base-horizontal:   @spacing-medium;
+@padding-large-horizontal:  @spacing-x-large;
+@padding-small-horizontal:  10px;
+@padding-xs-horizontal:     @spacing-x-small;
+
+
+//== Tables
+//
+@table-bg-hover:                @color-background-alt;
+@table-border-color:            @color-border-separator-alt;
+
+
+//== Buttons
+//
+@btn-default-color:              #44596c;
+@btn-default-border:             #bbc0c4;
+
+
+//== Forms
+//
+@input-color:                    #000;
+@input-border:                   #cfd0d2;
+@input-border-focus:             #bfc0c2;
+@input-color-placeholder:        @gray;
+
+
+//== Dropdowns
+//
+@dropdown-link-color:            #525354;
+@dropdown-link-hover-color:      darken(@dropdown-link-color, 5%);
+@dropdown-link-hover-bg:         @body-bg;
+@dropdown-link-disabled-color:   @gray;
+@dropdown-header-color:          @gray;
+
+
+//-- Z-index master list
+//
+@zindex-popover:           1010;
+@zindex-tooltip:           1030;
+
+
+//== Navbar
+//
+@navbar-default-color:             #fff;
+@navbar-default-bg:                @brand-primary;
+@navbar-default-link-color:                #fff;
+@navbar-default-link-hover-color:          #85ceea;
+@navbar-default-link-hover-bg:             @navbar-default-bg;
+@navbar-default-link-active-color:         #fff;
+@navbar-default-toggle-hover-bg:           lighten(@navbar-default-bg, 10%);
+@navbar-default-toggle-icon-bar-bg:        #fff;
+@navbar-default-toggle-border-color:       transparent;
+@navbar-inverse-color:                      @anchor-text-color;
+@navbar-inverse-bg:                         #293f54;
+@navbar-inverse-link-color:                 #fff;
+@navbar-inverse-link-active-bg:             @brand-primary;
+
+
+//== Navs
+//
+@nav-link-hover-bg:                         #fff;
+@nav-tabs-border-color:                     @gray;
+@nav-tabs-active-link-hover-bg:             #fff;
+@nav-tabs-active-link-hover-color:          @gray-dark;
+@nav-tabs-active-link-hover-border-color:   @gray;
+@nav-tabs-justified-link-border-color:            @gray;
+
+
+//== Pagination
+//
+@pagination-border:                    @gray;
+@pagination-hover-border:              @gray-lighter;
+@pagination-disabled-border:           @gray;
+
+
+//== Jumbotron
+//
+@jumbotron-bg:                   #fff;
+
+
+//== Form states and alerts
+//
+@state-success-text:             darken(@brand-success, 16%);
+@state-success-bg:               desaturate(lighten(@brand-success, 40%), 10%);
+@state-info-text:                darken(@brand-info, 16%);
+@state-info-bg:                  desaturate(lighten(@brand-info, 35%), 5%);
+@state-warning-text:             darken(@brand-warning, 16%);
+@state-warning-bg:               desaturate(lighten(@brand-warning, 35%), 5%);
+@state-danger-text:              darken(@brand-danger, 16%);
+@state-danger-bg:                desaturate(lighten(@brand-danger, 35%), 5%);
+
+
+//== Labels
+//
+@label-default-bg:            @gray;
+
+
+//== Modals
+//
+@modal-inner-padding:         20px;
+
+
+//== Progress bars
+//
+@progress-bg:                 #fff;
+@progress-border-color:       #dfe0e1;
+
+
+//== List group
+//
+@list-group-bg:                 transparent;
+@list-group-border:             @gray;
+@list-group-hover-bg:           @gray-lighter;
+
+
+//== Panels
+//
+@panel-inner-border:          #edeff0;
+@panel-footer-bg:             #fff;
+@panel-default-text:          #647687;
+@panel-default-border:        transparent;
+@panel-default-heading-bg:    @panel-footer-bg;
+
+@panel-primary-text:          @brand-primary;
+@panel-primary-border:        @panel-default-border;
+@panel-primary-heading-bg:    #fff;
+
+@panel-success-text:          @brand-success;
+@panel-success-border:        @panel-default-border;
+@panel-success-heading-bg:    #fff;
+
+@panel-info-text:             @state-info-text;
+@panel-info-border:           @panel-default-border;
+@panel-info-heading-bg:       #fff;
+
+@panel-warning-text:          @state-warning-text;
+@panel-warning-border:        @panel-default-border;
+@panel-warning-heading-bg:    #fff;
+
+@panel-danger-text:           @state-danger-text;
+@panel-danger-border:         @panel-default-border;
+@panel-danger-heading-bg:     #fff;
+
+
+//== Thumbnails
+//
+@thumbnail-border:            @gray;
+
+
+//== Wells
+//
+@well-bg:                     @gray-lighter;
+
+
+//== Badges
+//
+@badge-bg:                    @gray;
+
+
+//== Code
+//
+@pre-bg:                      #fff;
+@pre-border-color:            #cfd0d2;
+
+
+//== Type
+//
+@text-muted:                  @gray;
+@headings-small-color:        @gray;
+@blockquote-small-color:      @gray;
+@blockquote-border-color:     @gray;
+@page-header-border-color:    @gray;
+@page-header-bg-color:        #fff;
+@hr-border:                   @gray;
+@component-offset-horizontal: 180px;

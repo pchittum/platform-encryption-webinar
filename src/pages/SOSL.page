@@ -1,7 +1,7 @@
 <apex:page controller="SOSLController">
   <apex:form >
   <apex:inputText value="{!searchStr}"/>
-    <apex:commandButton value="Search in Account, Contact, Opportunity" action="{!soslDemo_method}"                reRender="acct,error,oppt,cont" status="actStatusId"/>
+    <apex:commandButton value="Search in Account, Contact, Opportunity" action="{!soslDemo_method}"                reRender="listpanel" status="actStatusId"/>
     <apex:actionStatus id="actStatusId">
                 <apex:facet name="start" >
                     <img src="/img/loading.gif"/>                    
@@ -9,9 +9,9 @@
     </apex:actionStatus>
   </apex:form>
  
-    <apex:outputPanel title="" id="error">
+    <apex:outputPanel title="" id="listpanel">
      <apex:pageMessages ></apex:pageMessages>
-     </apex:outputPanel>
+     
  
     <apex:pageBlock rendered="{!HasAccounts}" title="Accounts" id="acct">
     <apex:pageblockTable value="{!accList }" var="acc">
@@ -44,6 +44,6 @@
      <apex:column value="{!child.Family_Name__c}"/>
  </apex:pageblockTable>
  </apex:pageBlock>
-
+</apex:outputPanel>
    
 </apex:page>

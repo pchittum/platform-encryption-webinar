@@ -1,0 +1,24 @@
+{
+  "name": "bootstrap-sf1",
+  "version": "v0.1.0-beta.15",
+  "private": false,
+  "author": "Ryan Foster",
+  "main": [
+    "dist/bootstrap.css",
+    "dist/bootstrap.min.css"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "pages",
+    "templates",
+    "grunt",
+    "js",
+    "Gruntfile.js",
+    "index.html"
+  ],
+  "devDependencies": {
+    "bootstrap": "3.2.0"
+  }
+}

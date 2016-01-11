@@ -1,8 +1,12 @@
 Public with sharing class SOSLController{
- Public List<Opportunity> optyList {get;set;}
- Public List<contact> conList{get;set;}
- Public List<account> accList{get;set;}
+ public List<Opportunity> optyList {get;set;}
+ public List<contact> conList{get;set;}
+ public List<account> accList{get;set;}
  public List<Child__c> childList {get;set;} 
+ private Boolean hasOpportunities = false;
+ private Boolean hasAccounts = false;
+ private Boolean hasContacts = false;
+ private Boolean hasChildren = false;
   
  Public String searchStr{get;set;}
    Public SOSLController(){
@@ -30,24 +34,31 @@ Public with sharing class SOSLController{
        apexPages.addmessage(new apexpages.message(apexpages.severity.Error, 'Sorry, no results returned with matching string..'));
        return;
    }
-   }
+   } 
    else{
    apexPages.addmessage(new apexpages.message(apexpages.severity.Error, 'Please enter at least two characters..'));
    return;
    }
+   hasAccounts = !accList.isEmpty();
+   hasContacts = !conList.isEmpty();
+   hasOpportunities = !optyList.isEmpty();
+   hasChildren = !childList.isEmpty();
+   System.debug(childList);
+
+
   }
 
   public boolean getHasOpportunities(){
-    return (optyList != null && optyList.size() > 0);
+    return hasOpportunities;
   }
 
   public boolean getHasContacts(){
-    return (conList != null && conList.size() > 0);
+    return hasContacts;
   }
   public boolean getHasAccounts(){
-    return (accList != null && accList.size() > 0);
+    return hasAccounts;
   }
   public boolean getHasChildren(){
-    return (childList != null && childList.size() > 0);
+    return hasChildren;
   }
 }

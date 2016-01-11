@@ -1,0 +1,14 @@
+<apex:page controller="EncryptedCustomFieldController" id="thePage">
+
+    <apex:pageBlock title="All Encrypted Fields">
+        <apex:pageBlockTable value="{!fields}" var="item">
+            <apex:column value="{!item.name}" headerValue="Field Name"/> 
+            <apex:column value="{!item.objName}" headerValue="Object Name"/>
+            <apex:column value="{!item.isEncrypted}" headerValue="isEncrypted"/> 
+            <apex:column value="{!item.type}" headerValue="Type"/> 
+            <apex:column value="{!item.isCustom}" headerValue="isCustom"/>
+        </apex:pageBlockTable> 
+        
+    </apex:pageBlock>
+
+</apex:page>

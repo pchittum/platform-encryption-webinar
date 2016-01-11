@@ -1,0 +1,353 @@
+@import "variables.less";
+@import "../bower_components/bootstrap/less/bootstrap.less";
+
+@font-face {
+  font-family: 'ProximaNovaSoft-Regular';
+  font-weight: normal;
+  font-style: normal;
+  src: ~"url('@{font-path}@{font-file-regular}.eot')";
+  src: ~"url('@{font-path}@{font-file-regular}.eot?#iefix') format('embedded-opentype')",
+       ~"url('@{font-path}@{font-file-regular}.woff') format('woff')",
+       ~"url('@{font-path}@{font-file-regular}.ttf') format('truetype')",
+       ~"url('@{font-path}@{font-file-regular}.svg#proxima_nova_softregular') format('svg')";
+}
+@font-face {
+  font-family: 'ProximaNovaSoft-Medium';
+  font-weight: normal;
+  font-style: normal;
+  src: ~"url('@{font-path}@{font-file-regular}.eot')";
+  src: ~"url('@{font-path}@{font-file-regular}.eot?#iefix') format('embedded-opentype')",
+       ~"url('@{font-path}@{font-file-regular}.woff') format('woff')",
+       ~"url('@{font-path}@{font-file-regular}.ttf') format('truetype')",
+       ~"url('@{font-path}@{font-file-regular}.svg#proxima_nova_softmedium') format('svg')";
+}
+@font-face {
+  font-family: 'ProximaNovaSoft-Semibold';
+  font-weight: normal;
+  font-style: normal;
+  src: ~"url('@{font-path}@{font-file-regular}.eot')";
+  src: ~"url('@{font-path}@{font-file-regular}.eot?#iefix') format('embedded-opentype')",
+       ~"url('@{font-path}@{font-file-regular}.woff') format('woff')",
+       ~"url('@{font-path}@{font-file-regular}.ttf') format('truetype')",
+       ~"url('@{font-path}@{font-file-regular}.svg#proxima_nova_softmedium') format('svg')";
+}
+
+@import "s1-icons.less";
+@import "cards.less";
+@import "generated/contexts.less";
+
+@import "page-headers.less";
+@import "panels.less";
+@import "list-groups.less";
+@import "buttons.less";
+@import "dropdowns.less";
+
+// Add CSS Customizations to your theme here.
+
+body,
+.bootstrap {
+  -webkit-font-smoothing: antialiased;
+}
+
+
+
+//
+// Jumbotron
+// --------------------------------------------------
+
+.jumbotron {
+  color: @text-color;
+  &.jumbotron-center {
+    text-align: center;
+  }
+  a {
+    color: #fff;
+  }
+}
+
+.jumbotron-inverse {
+  background-color: @jumbotron-inverse-bg;
+  color: @jumbotron-inverse-color;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: @jumbotron-inverse-color;
+  }
+}
+
+//
+// Navbar
+// --------------------------------------------------
+
+.navbar {
+  header&,
+  header > & {
+    margin-bottom: 0;
+  }
+
+  .navbar-nav {
+    > li {
+      > a {
+        font-size: 14px;
+        margin: -1px 0;
+        line-height: 22px;
+      }
+    }
+  }
+}
+.navbar-brand {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+//
+// Forms
+// --------------------------------------------------
+
+.form-control-focus(@color: @input-border-focus) {
+  @color-rgba: rgba(red(@color), green(@color), blue(@color), .6);
+  &:focus {
+    border-color: @color;
+    outline: 0;
+    background-color: #fff;
+    .box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @{color-rgba}");
+  }
+}
+
+
+//
+// Sections
+// --------------------------------------------------
+
+.section {
+  .clearfix;
+  margin-bottom: 30px;
+  .section-head {
+    .h2;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #cfd0d2;
+  }
+}
+
+//
+// Progress bars
+// --------------------------------------------------
+
+.progress {
+  border-radius: 10px;
+  border: 1px solid @gray;
+  .box-shadow(none);
+  padding: 3px;
+}
+
+.progress-bar {
+  font-size: 11px;
+  line-height: 14px;
+  &:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  &:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
+
+
+
+//
+// Navs
+// --------------------------------------------------
+
+
+// Base class
+// --------------------------------------------------
+
+.nav {
+
+  > li {
+
+
+    > a {
+      color: darken(@gray, 20);
+    }
+  }
+
+}
+
+
+// Tabs
+// -------------------------
+
+// Give the tabs something to sit on
+.nav-tabs {
+  border-bottom: 1px solid @nav-tabs-border-color;
+  text-transform: uppercase;
+  > li {
+    float: left;
+    // Make the list-items overlay the bottom border
+    margin-bottom: -1px;
+
+    // Actual tabs (as links)
+    > a {
+      border: none;
+      border-bottom: 3px solid transparent;
+      border-radius: 0;
+      color: darken(@gray, 20%);
+      margin-right: 0;
+      padding: 10px 15px 7px 15px;
+
+      &:hover {
+        border-color: @brand-primary;
+        color: @gray-dark;
+        background-color: @gray-lighter;
+      }
+    }
+
+    // Active state, and its :hover to override normal :hover
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @nav-tabs-active-link-hover-color;
+        background-color: transparent;
+        border: none;
+        border-bottom: 3px solid @brand-primary;
+        cursor: default;
+      }
+    }
+  }
+  // pulling this in mainly for less shorthand
+  &.nav-justified {
+    .nav-justified();
+    .nav-tabs-justified();
+  }
+}
+
+
+//
+// Angular Strap: Datepicker
+// --------------------------------------------------
+
+.datepicker {
+  padding: 0;
+  thead {
+    background: #f0f1f2;
+    .dow {
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 12px;
+      padding: 5px 0;
+    }
+  }
+  .btn {
+    border: none;
+    background: transparent;
+    padding: 8px 12px 6px 12px;
+    &:hover,
+    &:focus {
+      background-color: @gray-light;
+    }
+    &:active,
+    &.btn-primary {
+      color: #fff;
+      background-color: @brand-primary;
+    }
+  }
+  tbody {
+    .btn {
+      border-radius: 0;
+    }
+    td {
+      border-right: 1px solid @gray-light;
+      border-bottom: 1px solid @gray-light;
+      &:last-child {
+        border-right: none;
+      }
+    }
+    tr:last-child {
+      td {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+
+/* Checkboxes and Radios
+   ========================================================================== */
+.sf1-checkbox,
+.sf1-radio {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-style: solid;
+  border-width: 1px;
+
+  border-color: #dadee2;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+
+  height: 22px;
+  width: 22px;
+  min-height: 22px;
+  background-color: #fff;
+
+  input[type="radio"]& {
+    margin: 0 5px 0 0;
+  }
+}
+
+.sf1-checkbox:disabled,
+.sf1-radio:disabled {
+    opacity: 0.5;
+}
+
+.sf1-checkbox:focus,
+.sf1-checkbox:active,
+.sf1-radio:focus,
+.sf1-radio:active {
+  background: #f5f6f7;
+}
+.sf1-checkbox:checked, .sf1-radio:checked {
+  background: #2a94d6 !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 1px solid transparent;
+}
+
+.sf1-checkbox:checked::after {
+  display: block;
+  position: relative;
+  content: '';
+  height: 8px;
+  width: 14px;
+  border-bottom: 4px solid white;
+  border-left: 4px solid white;
+  -webkit-transform: translate(3px, 5px) rotate(-45deg);
+}
+
+.sf1-radio {
+
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 100%;
+  line-height: normal;
+
+}
+.form-horizontal {
+  .sf1-radio {
+    min-height: 22px;
+  }
+}
+.sf1-radio:checked::after {
+  display: block;
+  position: relative;
+  content: '';
+  top: 5px;
+  left: 5px;
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+  background: white;
+}

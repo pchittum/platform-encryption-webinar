@@ -5,6 +5,8 @@ public class DynamicSort {
          /*I must give credit where it is due as the sorting algorithm I am using is the
          one supplied by Andrew Waite here: http://blog.sforce.com/sforce/2008/09/sorting-collect.html */
           
+         System.debug('sorting with list ' + items + ' on field ' + sortField);
+
          Boolean isSortFieldReference = false;
          Map<Id,String> referenceName;
  

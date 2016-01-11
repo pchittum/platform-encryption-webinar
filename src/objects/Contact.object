@@ -298,6 +298,17 @@
         <fullName>Title</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
+    <fields>
+        <fullName>testenc__c</fullName>
+        <encrypted>true</encrypted>
+        <externalId>false</externalId>
+        <label>testenc</label>
+        <length>11</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
     <listViews>
         <fullName>AllContacts</fullName>
         <columns>CONTACT.SALUTATION</columns>
